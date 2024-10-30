@@ -1,0 +1,22 @@
+---
+driver:
+  name: docker
+lint: | 
+  ansible-lint .
+  yamllint .
+platforms:
+ 
+  - name: fedora
+    image: pycontribs/fedora
+    pre_build_image: true
+
+  - name: ubuntu
+    image: cabanitos/ubuntu_py3:1.0.2
+    pre_build_image: true
+
+    
+provisioner:
+  name: ansible
+
+verifier:
+  name: ansible

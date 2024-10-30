@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    ansible_remote_tmp: "./"
+  vars:
+    ansible_remote_tmp: /root/
+  gather_facts: true
+  tasks:
+    - name: Include vector_role
+      include_role:
+        name: "vector_role"
